@@ -80,7 +80,8 @@
         <thead>
         <tr>
             <th th:with="newUrl=${urlBuilder.apply(fieldSorterAsc.apply('roomNumber'))}"
-                th:onclick="'javascript:onSortChange(\'' + ${newUrl} + '\');'"
+                th:data-sort-url="${newUrl}"
+                onclick="onSortChange(this.getAttribute('data-sort-url'))"
                 th:classappend="${cssWhenFieldIsAsc.apply('roomNumber')}"
                 th:title="${#qs.valueWhenMatchesSortAsc(qstring,
                                  'Sort room number A to Z',
@@ -89,7 +90,8 @@
                 Room Number
             </th>
             <th th:with="newUrl=${urlBuilder.apply(fieldSorterAsc.apply('roomType'))}"
-                th:onclick="'javascript:onSortChange(\'' + ${newUrl} + '\');'"
+                th:data-sort-url="${newUrl}"
+                onclick="onSortChange(this.getAttribute('data-sort-url'))"
                 th:classappend="${cssWhenFieldIsAsc.apply('roomType')}"
                 th:title="${#qs.valueWhenMatchesSortAsc(qstring,
                                  'Sort room type A to Z',
@@ -98,7 +100,8 @@
                 Room Type
             </th>
             <th th:with="newUrl=${urlBuilder.apply(fieldSorterAsc.apply('beds'))}"
-                th:onclick="'javascript:onSortChange(\'' + ${newUrl} + '\');'"
+                th:data-sort-url="${newUrl}"
+                onclick="onSortChange(this.getAttribute('data-sort-url'))"
                 th:classappend="${cssWhenFieldIsAsc.apply('beds')}"
                 th:title="${#qs.valueWhenMatchesSortAsc(qstring,
                                  'Sort total beds lowest to highest',
@@ -107,7 +110,8 @@
                 # Beds
             </th>
             <th th:with="newUrl=${urlBuilder.apply(fieldSorterAsc.apply('costPerNight'))}"
-                th:onclick="'javascript:onSortChange(\'' + ${newUrl} + '\');'"
+                th:data-sort-url="${newUrl}"
+                onclick="onSortChange(this.getAttribute('data-sort-url'))"
                 th:classappend="${cssWhenFieldIsAsc.apply('costPerNight')}"
                 th:title="${#qs.valueWhenMatchesSortAsc(qstring,
                                  'Sort cost per night lowest to highest',
