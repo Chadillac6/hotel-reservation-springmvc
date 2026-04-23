@@ -72,8 +72,8 @@
     </div>
 
     <table class="ui sortable celled table" th:unless="${rooms.getTotalElements() == 0}"
-           th:with="qstring=${#request.getQueryString()},
-                 urlBuilder=${#qs.urlBuilder(#request.getRequestURI())},
+                      th:with="qstring=${request.getQueryString()},
+                            urlBuilder=${#qs.urlBuilder(request.getRequestURI())},
                  fieldSorterAsc=${#qs.fieldSorterAsc(qstring)},
                  fieldSorterDesc=${#qs.fieldSorterDesc(qstring)},
                  cssWhenFieldIsAsc=${#qs.valueWhenMatchesSortAsc(qstring, '', 'sorted ascending', 'sorted descending')}">

@@ -19,8 +19,8 @@
     <div th:unless="${hotels.getTotalElements() == 0}">
         <h3 class="ui dividing header margin-top-20" th:text="|Results (${hotels.getTotalElements()})|"></h3>
         <table class="ui sortable celled table"
-               th:with="qstring=${#request.getQueryString()},
-                 urlBuilder=${#qs.urlBuilder(#request.getRequestURI())},
+                              th:with="qstring=${request.getQueryString()},
+                                urlBuilder=${#qs.urlBuilder(request.getRequestURI())},
                  fieldSorterAsc=${#qs.fieldSorterAsc(qstring)},
                  fieldSorterDesc=${#qs.fieldSorterDesc(qstring)},
                  cssWhenFieldIsAsc=${#qs.valueWhenMatchesSortAsc(qstring, '', 'sorted ascending', 'sorted descending')}">

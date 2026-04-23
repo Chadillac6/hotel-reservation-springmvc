@@ -22,14 +22,14 @@
 <div id="wrapper">
     <div class="ui inverted segment">
         <div class="ui inverted secondary pointing menu">
-            <a class="item" th:classappend="${#request.getRequestURI().endsWith('/')} ? 'active'" href="/">
+            <a class="item" th:classappend="${request.getRequestURI().endsWith('/')} ? 'active'" href="/">
                 Home
             </a>
             <div class="right menu">
-                <a class="item" th:classappend="${#request.getRequestURI().endsWith('/register')} ? 'active'" href="/register">
+                <a class="item" th:classappend="${request.getRequestURI().endsWith('/register')} ? 'active'" href="/register">
                     Register
                 </a>
-                <a class="item" th:classappend="${#request.getRequestURI().endsWith('/admin')} ? 'active'" href="/admin">
+                <a class="item" th:classappend="${request.getRequestURI().endsWith('/admin')} ? 'active'" href="/admin">
                     Admin
                 </a>
             </div>
