@@ -1,9 +1,9 @@
 package com.demo.domain.location;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import java.util.Objects;
 
 @Embeddable

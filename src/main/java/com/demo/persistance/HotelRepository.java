@@ -4,15 +4,14 @@ import com.demo.domain.Hotel;
 import com.demo.domain.Room;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HotelRepository extends PagingAndSortingRepository<Hotel, Long>, QuerydslPredicateExecutor<Hotel> {
+public interface HotelRepository extends JpaRepository<Hotel, Long>, QuerydslPredicateExecutor<Hotel> {
 
     /**
      * See HotelPredicates.byLocation to see a query dsl alternative approach.

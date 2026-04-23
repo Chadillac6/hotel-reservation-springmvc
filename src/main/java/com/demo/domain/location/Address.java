@@ -2,10 +2,10 @@ package com.demo.domain.location;
 
 import com.demo.util.Utils;
 
-import javax.persistence.*;
-import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Embeddable

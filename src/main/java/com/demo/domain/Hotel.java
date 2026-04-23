@@ -4,7 +4,7 @@ import com.demo.domain.location.Address;
 import com.demo.util.Utils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalTime;

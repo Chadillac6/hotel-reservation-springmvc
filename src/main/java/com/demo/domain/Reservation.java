@@ -1,7 +1,7 @@
 package com.demo.domain;
 
-import javax.persistence.*;
-import javax.validation.Valid;
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.*;
