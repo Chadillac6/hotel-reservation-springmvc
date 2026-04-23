@@ -22,6 +22,6 @@ public class HomeControllerTest {
     public void getSearchPage_HasCorrectView() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/search"));
+                .andExpect(view().name("hotel/search"));
     }
 }

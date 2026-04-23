@@ -55,11 +55,11 @@ public class HotelSearchControllerTest {
 
         mockMvc.perform(get("/hotel/search"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/hotels"))
-                .andExpect(model().attribute("hotels", hasExpectedPageResult));
+                        .andExpect(view().name("hotel/hotels"))
+                        .andExpect(model().attribute("hotels", hasExpectedPageResult));
 
-        verify(hotelRepository, times(1))
-                .findAllByLocation(isNull(), isNull(), isNull(), any(Pageable.class));
+                verify(hotelRepository, times(1))
+                        .findAllByLocation(isNull(), isNull(), isNull(), any(Pageable.class));
     }
 
     /**
@@ -80,11 +80,11 @@ public class HotelSearchControllerTest {
         mockMvc.perform(get("/hotel/search?state=WA&postcode=4000"))
                 .andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(view().name("/hotel/hotels"))
-                .andExpect(model().attribute("hotels", hasExpectedPageResult));
+                        .andExpect(view().name("hotel/hotels"))
+                        .andExpect(model().attribute("hotels", hasExpectedPageResult));
 
-        verify(hotelRepository, times(1))
-                .findAllByLocation(eq("WA"), isNull(), eq("4000"), any(Pageable.class));
+                verify(hotelRepository, times(1))
+                        .findAllByLocation(eq("WA"), isNull(), eq("4000"), any(Pageable.class));
     }
 
     /**
@@ -108,11 +108,11 @@ public class HotelSearchControllerTest {
 
         mockMvc.perform(get("/hotel/search?state=VIC"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/hotels"))
-                .andExpect(model().attribute("hotels", hasExpectedPageResult));
+                        .andExpect(view().name("hotel/hotels"))
+                        .andExpect(model().attribute("hotels", hasExpectedPageResult));
 
-        verify(hotelRepository, times(1))
-                .findAllByLocation(eq("VIC"), isNull(), isNull(), any(Pageable.class));
+                verify(hotelRepository, times(1))
+                        .findAllByLocation(eq("VIC"), isNull(), isNull(), any(Pageable.class));
     }
 
     /**
@@ -153,7 +153,7 @@ public class HotelSearchControllerTest {
 
         mockMvc.perform(get(String.format("/hotel/%d/rooms", hotel.getId())))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/rooms"))
+                .andExpect(view().name("hotel/rooms"))
                 .andExpect(model().attribute("hotel", Matchers.isA(Hotel.class)))
                 .andExpect(model().attribute("rooms", hasExpectedPageResult));
 

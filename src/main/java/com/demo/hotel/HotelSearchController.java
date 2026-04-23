@@ -36,7 +36,7 @@ public class HotelSearchController {
                             Pageable pageable, Model model) {
         Page<Hotel> results = hotelRepository.findAllByLocation(state, suburb, postcode, pageable);
         model.addAttribute("hotels", results == null ? Page.empty() : results);
-        return "/hotel/hotels";
+        return "hotel/hotels";
     }
 
     @GetMapping(value = "/hotel/{id}/rooms")
@@ -45,7 +45,7 @@ public class HotelSearchController {
         Page<Room> availableRooms = roomRepository.findAll(RoomPredicates.availableRoom(id), pageable);
         model.addAttribute("rooms", availableRooms);
         model.addAttribute("hotel", hotel);
-        return "/hotel/rooms";
+        return "hotel/rooms";
     }
 
 
@@ -58,6 +58,6 @@ public class HotelSearchController {
     public String getHotels(Pageable pageable, Model model) {
         Page<Hotel> results = hotelRepository.findAll(pageable);
         model.addAttribute("hotels", results);
-        return "/hotel/hotels";
+        return "hotel/hotels";
     }
 }
