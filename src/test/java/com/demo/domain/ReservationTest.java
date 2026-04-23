@@ -3,7 +3,7 @@ package com.demo.domain;
 import com.demo.domain.location.Address;
 import com.demo.domain.location.Postcode;
 import com.demo.domain.location.State;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 public class ReservationTest {
@@ -200,13 +201,14 @@ public class ReservationTest {
     /**
      * If general extras contains a {@code Extra.Category.Food} an exception is thrown.
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setGeneralExtras_ThrowsException_WhenInvalidExtras() {
         Reservation reservation = new Reservation();
-        reservation.setGeneralExtras(
-                Set.of(new Extra("a", BigDecimal.valueOf(1.50), Extra.Type.Basic, Extra.Category.Food))
-        );
-        assertThat(reservation.getGeneralExtras()).isNull();
+        assertThrows(IllegalArgumentException.class, () -> {
+            reservation.setGeneralExtras(
+                    Set.of(new Extra("a", BigDecimal.valueOf(1.50), Extra.Type.Basic, Extra.Category.Food))
+            );
+        });
     }
 
     /**

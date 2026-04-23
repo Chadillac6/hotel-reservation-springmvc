@@ -10,15 +10,13 @@ import com.demo.persistance.predicates.RoomPredicates;
 import com.demo.persistance.RoomRepository;
 import org.hamcrest.FeatureMatcher;
 import org.hamcrest.Matchers;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
@@ -33,7 +31,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(HotelSearchController.class)
 @EnableSpringDataWebSupport
 @ActiveProfiles("test")
@@ -58,11 +55,11 @@ public class HotelSearchControllerTest {
 
         mockMvc.perform(get("/hotel/search"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/hotels"))
-                .andExpect(model().attribute("hotels", hasExpectedPageResult));
+                        .andExpect(view().name("hotel/hotels"))
+                        .andExpect(model().attribute("hotels", hasExpectedPageResult));
 
-        verify(hotelRepository, times(1))
-                .findAllByLocation(isNull(), isNull(), isNull(), any(Pageable.class));
+                verify(hotelRepository, times(1))
+                        .findAllByLocation(isNull(), isNull(), isNull(), any(Pageable.class));
     }
 
     /**
@@ -83,11 +80,11 @@ public class HotelSearchControllerTest {
         mockMvc.perform(get("/hotel/search?state=WA&postcode=4000"))
                 .andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(view().name("/hotel/hotels"))
-                .andExpect(model().attribute("hotels", hasExpectedPageResult));
+                        .andExpect(view().name("hotel/hotels"))
+                        .andExpect(model().attribute("hotels", hasExpectedPageResult));
 
-        verify(hotelRepository, times(1))
-                .findAllByLocation(eq("WA"), isNull(), eq("4000"), any(Pageable.class));
+                verify(hotelRepository, times(1))
+                        .findAllByLocation(eq("WA"), isNull(), eq("4000"), any(Pageable.class));
     }
 
     /**
@@ -111,11 +108,11 @@ public class HotelSearchControllerTest {
 
         mockMvc.perform(get("/hotel/search?state=VIC"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/hotels"))
-                .andExpect(model().attribute("hotels", hasExpectedPageResult));
+                        .andExpect(view().name("hotel/hotels"))
+                        .andExpect(model().attribute("hotels", hasExpectedPageResult));
 
-        verify(hotelRepository, times(1))
-                .findAllByLocation(eq("VIC"), isNull(), isNull(), any(Pageable.class));
+                verify(hotelRepository, times(1))
+                        .findAllByLocation(eq("VIC"), isNull(), isNull(), any(Pageable.class));
     }
 
     /**
@@ -156,7 +153,7 @@ public class HotelSearchControllerTest {
 
         mockMvc.perform(get(String.format("/hotel/%d/rooms", hotel.getId())))
                 .andExpect(status().isOk())
-                .andExpect(view().name("/hotel/rooms"))
+                .andExpect(view().name("hotel/rooms"))
                 .andExpect(model().attribute("hotel", Matchers.isA(Hotel.class)))
                 .andExpect(model().attribute("rooms", hasExpectedPageResult));
 

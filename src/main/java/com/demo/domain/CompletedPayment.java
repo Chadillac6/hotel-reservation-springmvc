@@ -1,6 +1,6 @@
 package com.demo.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.YearMonth;
 import java.util.Objects;
 import java.util.UUID;

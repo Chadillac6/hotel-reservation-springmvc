@@ -8,11 +8,11 @@ public class HomeController {
 
     @GetMapping("/")
     public String getSearchPage() {
-        return "/hotel/search";
+        return "hotel/search";
     }
 
     @GetMapping("/test")
     public String test() {
-        return "/hotel/test";
+        return "hotel/test";
     }
 }
