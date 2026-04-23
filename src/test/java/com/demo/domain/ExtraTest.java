@@ -1,10 +1,8 @@
 package com.demo.domain;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-
-import static org.junit.Assert.*;
 
 import static org.assertj.core.api.Assertions.*;
 
