@@ -2,7 +2,7 @@ package com.demo.reservation.flow.forms;
 
 import com.demo.domain.Reservation;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.*;
 
 /**

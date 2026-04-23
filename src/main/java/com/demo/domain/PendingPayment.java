@@ -3,11 +3,11 @@ package com.demo.domain;
 import com.demo.converters.LocalDateTimeConverter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Convert;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import jakarta.persistence.Convert;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import java.time.*;
 import java.util.Arrays;
 import java.util.List;

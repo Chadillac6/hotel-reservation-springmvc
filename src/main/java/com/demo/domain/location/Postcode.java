@@ -1,14 +1,14 @@
 package com.demo.domain.location;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import java.util.Objects;
 
 @Embeddable
 public class Postcode {
-    @Column(nullable = false)
+    @Column(name = "postcode_value", nullable = false)
     @Pattern(regexp = "[0-9]{4}", message = "Postcode must be 4 digits")
     @NotNull(message = "required")
     private String value;
