@@ -31,6 +31,27 @@ https://github.com/mjstewart/hotel-reservation-springmvc/blob/master/src/main/ja
 To play around in the IDE, run `mvn clean compile` to generate any QueryDsl auto generated classes.
 
 
+## Docker
+
+You can run this application in a Docker container without needing to install Java or Maven locally.
+
+### Build and run with Docker
+
+```bash
+docker build -t hotel-reservation .
+docker run -p 8080:8080 hotel-reservation
+```
+
+### Run with Docker Compose
+
+```bash
+docker compose up
+```
+
+The application will be available at [http://localhost:8080](http://localhost:8080).
+
+---
+
 TODO:
 
 I don't have time right now to fix issues that are to do with new thymeleaf versions so you will see these errors.
